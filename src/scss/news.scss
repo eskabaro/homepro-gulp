@@ -1,0 +1,124 @@
+.news {
+  max-width: $desktop;
+  margin: auto;
+  padding-block: rem(85);
+
+  @media all and (max-width: $tablet) {
+    padding-block: rem(48);
+  }
+
+  &__heading {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+
+    h1 {
+      color: var(--dark);
+      font-size: clamp(rem(32), 4vw, rem(52));
+      font-weight: 700;
+      line-height: 1.23;
+      padding-bottom: rem(24);
+    }
+
+    p {
+      color: var(--gray-lite);
+      font-size: clamp(rem(18), 4vw, rem(24));
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+
+  &__list {
+    margin-top: rem(56);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(48);
+
+    @media all and (max-width: $tablet) {
+      grid-template-columns: auto;
+
+      li {
+        p {
+          max-width: 100%;
+        }
+      }
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16);
+
+      .blur-load {
+        border-radius: rem(24);
+        overflow: hidden;
+        margin-bottom: rem(8);
+        width: fit-content;
+
+        @media all and (max-width: $tablet) {
+          margin: auto;
+        }
+      }
+
+      span {
+        color: var(--gray-lite);
+        font-size: rem(18);
+        font-weight: 400;
+      }
+
+      h2 {
+        color: var(--dark);
+        font-size: clamp(rem(20), 4vw, rem(32));
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      p {
+        color: var(--gray-lite);
+        font-size: rem(18);
+        font-weight: 400;
+        line-height: 1.55;
+        max-height: 84px;
+        max-width: 448px;
+        height: 100%;
+        overflow: hidden;
+      }
+    }
+
+    &__btn-box {
+      margin-top: rem(8);
+
+      button {
+        margin-block: rem(3);
+        margin-right: rem(12);
+        display: inline-block;
+        border-radius: 999px;
+        color: var(--gray-lite);
+        font-size: rem(14);
+        font-weight: 600;
+        background-color: var(--gray-natural);
+        padding: rem(8) rem(16);
+      }
+    }
+  }
+
+  &__view-more {
+    color: var(--secondary);
+    position: relative;
+    left: 50%;
+    margin-top: rem(56);
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: rem(4);
+    font-size: clamp(rem(18), 4vw, rem(24));
+    font-weight: 700;
+    transition: $opacity-hover;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

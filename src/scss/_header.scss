@@ -1,0 +1,105 @@
+@mixin font-size {
+  color: #fff;
+  font-size: rem(18);
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.header {
+  width: 100%;
+  margin: auto;
+  max-width: $desktop;
+  background-color: var(--primary);
+  min-height: rem(80);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 0 100vmax var(--primary);
+  clip-path: inset(0 -100vmax);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media all and (max-width: $mobile) {
+    min-height: rem(56);
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      @include font-size;
+    }
+  }
+
+  &__menu {
+    @media all and (max-width: $tablet) {
+      display: none;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      gap: rem(57);
+
+      li {
+        display: inherit;
+
+        a {
+          @include font-size;
+          transition: all 0.2s ease-out;
+        }
+      }
+    }
+  }
+
+  &__schedule {
+    @include font-size;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: rem(10);
+
+    @media all and (max-width: $tablet) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: rem(12);
+      height: rem(12);
+      background-color: #ff5e5e;
+      border-radius: 50%;
+    }
+  }
+
+  &__burger {
+    display: flex;
+    transition: $opacity-hover;
+
+    @media all and (min-width: $tablet) {
+      display: none;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--secondary);
+}
+
+nav ul:hover a {
+  filter: blur(1.5px);
+}
+
+nav ul:hover a:hover {
+  filter: blur(0px);
+}

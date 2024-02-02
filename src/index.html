@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  @@include('./html/head.html', { "title": "Title" })
+  @@include('./html/head.html', { "title": "HomePro" })
   <body>
-    @@include('./html/header.html', {})
-    <main></main>
-    @@include('./html/footer.html', {})
+    <div class="container">
+      @@include('./html/_header.html', {})
+      <main class="main">
+        @@include('./html/_banner.html', {})
+        @@include('./html/_prof-services.html', {})
+        @@include('./html/_services.html', {}) @@include('./html/_fatured.html',
+        {}) @@include('./html/_howworks.html', {}) @@include('./html/news.html',
+        {}) @@include('./html/_accordion.html', {})
+        @@include('./html/_banner-bottom.html', {})
+      </main>
+      @@include('./html/_footer.html', {})
+    </div>
+    @@include('./html/_modal.html', {})
     <script src="js/app.min.js"></script>
   </body>
 </html>

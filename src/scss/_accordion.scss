@@ -1,0 +1,132 @@
+.accordion {
+  max-width: $desktop;
+  width: 100%;
+  margin: auto;
+  padding-block: rem(130);
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  @media all and (max-width: $tablet) {
+    padding-block: rem(32);
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    gap: rem(32);
+
+    &__heading {
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        text-align: center;
+      }
+    }
+  }
+
+  &__heading {
+    max-width: 470px;
+
+    h1 {
+      color: var(--dark);
+      font-size: clamp(rem(24), 4vw, rem(52));
+      font-weight: 700;
+      margin-bottom: rem(24);
+    }
+
+    span {
+      color: var(--dark);
+      font-size: clamp(rem(18), 4vw, rem(20));
+      font-weight: 400;
+
+      a {
+        padding-left: rem(11);
+        color: var(--secondary);
+        font-size: clamp(rem(18), 4vw, rem(24));
+        font-weight: 700;
+        text-decoration: underline;
+
+        @media (hover: hover) {
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: rem(12);
+    max-width: 833px;
+    margin-left: auto;
+    width: 100%;
+
+    details {
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      transition-timing-function: linear;
+      overflow: hidden;
+      border-radius: rem(12);
+      font-size: clamp(rem(18), 4vw, rem(24));
+      font-weight: 700;
+      color: var(--gray-lite);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--gray-natural);
+        }
+      }
+
+      &[open] {
+        background-color: var(--gray-natural);
+        & summary {
+          img {
+            transform: rotate(0deg);
+          }
+
+          &::after {
+            transform: rotate(-135deg);
+          }
+        }
+      }
+
+      & summary {
+        position: relative;
+        padding: rem(24) rem(32);
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          transition: all 0.2s ease-in-out;
+          transform: rotate(180deg);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          border: 2px solid var(--palette-text);
+          border-left: none;
+          border-top: none;
+          left: auto;
+          right: 16px;
+          height: 8px;
+          width: 8px;
+          transform: rotate(45deg);
+          transition: all var(--transition-speed);
+        }
+      }
+
+      p {
+        color: var(--gray-dark);
+        line-height: 1.5;
+        font-size: rem(16);
+        font-weight: 400;
+        padding: rem(24) rem(32);
+        padding-top: 0;
+      }
+    }
+  }
+}

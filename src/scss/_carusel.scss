@@ -1,0 +1,31 @@
+.carusel {
+  max-width: $desktop;
+  width: 100%;
+  margin: auto;
+  padding-block: rem(130);
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(66);
+    border-bottom: 1px solid rgba(203, 207, 219, 0);
+
+    h1 {
+      max-width: 650px;
+      text-align: center;
+      color: var(--dark);
+      font-size: clamp(rem(24), 4vw, rem(52));
+      font-weight: 700;
+      line-height: 1.23;
+    }
+
+    &__image-box {
+      padding-block: rem(24);
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+}

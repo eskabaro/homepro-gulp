@@ -1,0 +1,111 @@
+.prof-services {
+  max-width: $desktop;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: rem(32);
+  padding-bottom: rem(65);
+  padding-top: rem(120);
+
+  @media all and (max-width: $tablet) {
+    flex-direction: column-reverse;
+    padding-bottom: rem(32);
+    padding-top: rem(60);
+
+    &__image-box {
+      margin: auto;
+    }
+  }
+
+  &__content {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: rem(24);
+
+    @media all and (max-width: $tablet) {
+      max-width: 100%;
+    }
+
+    h1 {
+      color: var(--dark);
+      font-size: clamp(rem(24), 4vw, rem(52));
+      font-weight: 700;
+      line-height: 1.23;
+    }
+
+    p {
+      color: var(--gray-lite);
+      font-size: rem(18);
+      font-weight: 400;
+      line-height: 1.23;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: rem(32);
+      column-gap: rem(20);
+
+      @media all and (max-width: calc($mobile + 100px)) {
+        grid-template-columns: auto;
+        row-gap: rem(24);
+        column-gap: 0;
+
+        li {
+          font-weight: 600 !important;
+        }
+      }
+
+      li {
+        gap: rem(12);
+        display: flex;
+        align-items: center;
+        font-size: clamp(rem(16), 4vw, rem(20));
+        font-weight: 700;
+        line-height: 1.4;
+
+        span {
+          color: var(--tertiary);
+        }
+      }
+    }
+
+    &__info {
+      margin-top: rem(24);
+      padding: rem(12) rem(32);
+      background-color: var(--secondary);
+      border-radius: 24px;
+
+      @media all and (max-width: $tablet) {
+        padding: rem(12) rem(24);
+        border-radius: 12px;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: rem(18);
+        color: #fff;
+        font-weight: 400;
+        line-height: 1.55;
+
+        a {
+          font-weight: 600;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__image-box {
+    min-width: 450px;
+    display: flex;
+    align-items: center;
+
+    @media all and (max-width: $tablet) {
+      min-width: auto;
+    }
+  }
+}
