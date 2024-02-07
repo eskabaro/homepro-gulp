@@ -19,6 +19,9 @@ $desktop: 1440px;
 
 $opacity-hover: opacity 0.1s ease-in-out;
 
+// fonts
+// @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
 // modules
 @import "./_header.scss";
 @import "./_modal.scss";
@@ -31,9 +34,6 @@ $opacity-hover: opacity 0.1s ease-in-out;
 @import "./howworks.scss";
 @import "./news.scss";
 @import "./accordion.scss";
-
-// fonts
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap");
 
 html,
 body {
